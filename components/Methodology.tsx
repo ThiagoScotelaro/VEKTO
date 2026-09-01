@@ -14,7 +14,7 @@ export default function Methodology() {
         </h2>
 
         {/* Desktop / tablet timeline */}
-        <div className="mt-16 hidden md:grid md:grid-cols-6 md:gap-4">
+        <div className="mt-16 hidden md:grid md:grid-cols-4 md:gap-6">
           {steps.map((step, i) => (
             <div key={step.title} className="relative flex flex-col items-center text-center">
               {i < steps.length - 1 && (
