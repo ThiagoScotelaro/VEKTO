@@ -1,15 +1,9 @@
 "use client";
 
-import {
-  FileStack,
-  Receipt,
-  UserPlus,
-  GitCompareArrows,
-  MailCheck,
-} from "lucide-react";
+import { FileStack, Receipt, MailCheck } from "lucide-react";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
-const AUTOMATION_ICONS = [FileStack, Receipt, UserPlus, GitCompareArrows, MailCheck];
+const AUTOMATION_ICONS = [FileStack, Receipt, MailCheck];
 
 export default function Cases() {
   const { t } = useI18n();
@@ -90,7 +84,7 @@ export default function Cases() {
             {t.cases.automationsLead}
           </p>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
             {t.cases.automations.map((item, i) => {
               const Icon = AUTOMATION_ICONS[i];
               return (
