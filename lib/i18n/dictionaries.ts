@@ -183,7 +183,7 @@ const pt: Dictionary = {
     title: "Da ideia ao sistema em produção",
     lead: "Não falamos só de capacidade técnica — mostramos o tipo de sistema e automação que a VEKTO constrói.",
     flagship: {
-      tag: "Case real · Plataforma interna",
+      tag: "Sistema em produção",
       title: "NEXUS — Gestão & Contabilidade",
       lead: "Toda a operação de uma sociedade de contabilidade, em um só sistema.",
       description:
@@ -202,34 +202,24 @@ const pt: Dictionary = {
       quote:
         "Deixamos de perguntar onde está o arquivo. Agora a pergunta é só se está feito — e o sistema já sabe a resposta.",
     },
-    automationsTitle: "Tipos de automação que construímos",
+    automationsTitle: "Automação sob medida, para o seu processo",
     automationsLead:
-      "Além de sistemas completos como o NEXUS, a VEKTO constrói automações com RPA (UiPath, Power Automate) e Power Apps para eliminar trabalho manual em processos específicos.",
+      "Não trabalhamos com pacotes fechados. Entendemos o processo, o orçamento e a prioridade de cada cliente, e construímos a automação certa para aquele caso — os exemplos abaixo são só uma amostra do que é possível.",
     automations: [
       {
-        title: "Backoffice autônomo de documentos",
+        title: "Operação inteligente de documentos",
         description:
-          "Recebe e-mails e PDFs, extrai e valida dados, classifica e lança no sistema — só pede aprovação humana quando há erro.",
+          "Faturas, contratos, comprovativos e formulários chegam por e-mail, portal ou SharePoint. A IA identifica o documento, extrai e valida a informação e integra com ERP, CRM ou sistema interno — só as exceções chegam a uma pessoa.",
       },
       {
-        title: "Contas a pagar",
+        title: "Automação financeira e contas a pagar",
         description:
-          "Do recebimento da fatura à conciliação: validação, aprovação e lançamento automático no ERP.",
+          "Da fatura recebida ao lançamento no ERP: leitura do documento, validação de fornecedor, conferência com o pedido de compra e aprovação, sem digitação manual.",
       },
       {
-        title: "Onboarding de clientes",
+        title: "Caixa de entrada inteligente",
         description:
-          "Formulário, documentos, verificação, criação em CRM/ERP e liberação de acessos, sem etapas manuais repetidas.",
-      },
-      {
-        title: "Reconciliação automática",
-        description:
-          "Cruza banco, ERP e faturas para identificar divergências, deixando só as exceções para revisão humana.",
-      },
-      {
-        title: "Agente operacional de e-mail",
-        description:
-          "Lê caixas de e-mail compartilhadas, identifica o pedido, consulta os sistemas e executa a ação — não só responde.",
+          "Um agente que lê e-mails de áreas como financeiro, RH ou atendimento, entende o pedido, consulta os sistemas certos e resolve — encaminhando para uma pessoa só quando a ação é sensível.",
       },
     ],
   },
@@ -282,15 +272,19 @@ const pt: Dictionary = {
     categories: [
       {
         title: "Desenvolvimento",
-        items: ["Next.js", "React", "NestJS", "TypeScript", "PostgreSQL", "Supabase"],
+        items: ["Next.js", "React", "Node.js", "NestJS", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        title: "Dados e Cloud",
+        items: ["PostgreSQL", "Supabase", "AWS", "Azure", "Docker"],
       },
       {
         title: "Automação e RPA",
-        items: ["UiPath", "Power Automate", "Power Apps", "SharePoint"],
+        items: ["UiPath", "Power Automate", "Power Apps", "SharePoint", "Microsoft 365"],
       },
       {
         title: "Inteligência Artificial",
-        items: ["OpenAI", "Claude"],
+        items: ["OpenAI", "Claude", "Azure AI"],
       },
     ],
   },
@@ -434,7 +428,7 @@ const en: Dictionary = {
     title: "From idea to system in production",
     lead: "We don't just talk about technical capacity — we show the kind of system and automation VEKTO builds.",
     flagship: {
-      tag: "Real case · Internal platform",
+      tag: "System in production",
       title: "NEXUS — Management & Accounting",
       lead: "An entire accounting firm's operation, in a single system.",
       description:
@@ -453,34 +447,24 @@ const en: Dictionary = {
       quote:
         "We stopped asking where the file is. Now the only question is whether it's done — and the system already knows the answer.",
     },
-    automationsTitle: "Types of automation we build",
+    automationsTitle: "Automation built around your process",
     automationsLead:
-      "Beyond full systems like NEXUS, VEKTO builds RPA automations (UiPath, Power Automate) and Power Apps to remove manual work from specific processes.",
+      "We don't work off a fixed package. We understand the process, the budget and the priority of each client, and build the right automation for that case — the examples below are just a sample of what's possible.",
     automations: [
       {
-        title: "Autonomous document backoffice",
+        title: "Intelligent document operations",
         description:
-          "Receives emails and PDFs, extracts and validates data, classifies and posts it into the system — asking for human approval only when there's an error.",
+          "Invoices, contracts, receipts and forms arrive by email, portal or SharePoint. AI identifies the document, extracts and validates the information, and integrates it with the ERP, CRM or internal system — only exceptions reach a person.",
       },
       {
-        title: "Accounts payable",
+        title: "Finance automation and accounts payable",
         description:
-          "From receiving the invoice to reconciliation: validation, approval and automatic posting into the ERP.",
+          "From the incoming invoice to the ERP entry: reading the document, validating the supplier, matching it against the purchase order and approving it — no manual data entry.",
       },
       {
-        title: "Client onboarding",
+        title: "Intelligent shared inbox",
         description:
-          "Form, documents, verification, CRM/ERP creation and access provisioning, with no repeated manual steps.",
-      },
-      {
-        title: "Automatic reconciliation",
-        description:
-          "Cross-checks bank, ERP and invoices to flag discrepancies, leaving only the exceptions for human review.",
-      },
-      {
-        title: "Operational email agent",
-        description:
-          "Reads shared inboxes, identifies the request, checks the systems and carries out the action — not just replies.",
+          "An agent that reads emails for teams like finance, HR or support, understands the request, checks the right systems and resolves it — routing to a person only when the action is sensitive.",
       },
     ],
   },
@@ -533,15 +517,19 @@ const en: Dictionary = {
     categories: [
       {
         title: "Development",
-        items: ["Next.js", "React", "NestJS", "TypeScript", "PostgreSQL", "Supabase"],
+        items: ["Next.js", "React", "Node.js", "NestJS", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        title: "Data and Cloud",
+        items: ["PostgreSQL", "Supabase", "AWS", "Azure", "Docker"],
       },
       {
         title: "Automation and RPA",
-        items: ["UiPath", "Power Automate", "Power Apps", "SharePoint"],
+        items: ["UiPath", "Power Automate", "Power Apps", "SharePoint", "Microsoft 365"],
       },
       {
         title: "Artificial Intelligence",
-        items: ["OpenAI", "Claude"],
+        items: ["OpenAI", "Claude", "Azure AI"],
       },
     ],
   },
