@@ -10,6 +10,7 @@ export interface Dictionary {
   };
   nav: {
     solutions: string;
+    cases: string;
     howWeWork: string;
     about: string;
     contact: string;
@@ -25,8 +26,31 @@ export interface Dictionary {
     diagramLeft: string[];
     diagramRight: string[];
   };
+  whoFor: {
+    eyebrow: string;
+    title: string;
+    items: { title: string; description: string }[];
+    closing: string;
+  };
   solutions: {
     items: { title: string; description: string }[];
+  };
+  cases: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    flagship: {
+      tag: string;
+      title: string;
+      lead: string;
+      description: string;
+      tags: string[];
+      highlights: { value: string; label: string }[];
+      quote: string;
+    };
+    automationsTitle: string;
+    automationsLead: string;
+    automations: { title: string; description: string }[];
   };
   speed: {
     title: string;
@@ -38,6 +62,18 @@ export interface Dictionary {
   methodology: {
     title: string;
     steps: { title: string; description: string }[];
+  };
+  tech: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    categories: { title: string; items: string[] }[];
+  };
+  security: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    items: { title: string; description: string }[];
   };
   contact: {
     title: string;
@@ -62,6 +98,12 @@ export interface Dictionary {
   };
   footer: {
     tagline: string[];
+    companyLabel: string;
+    navSolutions: string;
+    navCases: string;
+    navHow: string;
+    navContact: string;
+    copyright: string;
   };
 }
 
@@ -73,6 +115,7 @@ const pt: Dictionary = {
   },
   nav: {
     solutions: "Soluções",
+    cases: "Cases",
     howWeWork: "Como Trabalhamos",
     about: "Sobre",
     contact: "Contato",
@@ -88,6 +131,28 @@ const pt: Dictionary = {
     ctaSecondary: "Ver Soluções",
     diagramLeft: ["Processos manuais", "e ineficientes"],
     diagramRight: ["Soluções digitais,", "automatizadas e integradas"],
+  },
+  whoFor: {
+    eyebrow: "Para quem trabalhamos",
+    title: "Para empresas que sabem que o processo pode ser melhor.",
+    items: [
+      {
+        title: "Ainda depende de planilhas",
+        description:
+          "Informação dispersa entre arquivos, controle manual e pouca visibilidade sobre o que está pendente e com quem.",
+      },
+      {
+        title: "A equipe perde tempo com tarefas repetitivas",
+        description:
+          "Copiar informação, validar dados, gerar documentos ou alimentar sistemas manualmente todos os dias.",
+      },
+      {
+        title: "Os sistemas não conversam entre si",
+        description:
+          "A mesma informação precisa ser digitada mais de uma vez, em mais de um lugar, por mais de uma pessoa.",
+      },
+    ],
+    closing: "É exatamente aqui que a VEKTO entra.",
   },
   solutions: {
     items: [
@@ -110,6 +175,61 @@ const pt: Dictionary = {
         title: "Integração de sistemas",
         description:
           "Conectamos sistemas, dados e ferramentas para criar um fluxo único.",
+      },
+    ],
+  },
+  cases: {
+    eyebrow: "Soluções que já construímos",
+    title: "Da ideia ao sistema em produção",
+    lead: "Não falamos só de capacidade técnica — mostramos o tipo de sistema e automação que a VEKTO constrói.",
+    flagship: {
+      tag: "Case real · Plataforma interna",
+      title: "NEXUS — Gestão & Contabilidade",
+      lead: "Toda a operação de uma sociedade de contabilidade, em um só sistema.",
+      description:
+        "O NEXUS é a plataforma de gestão e contabilidade construída pela VEKTO para centralizar toda a operação de uma sociedade de contabilidade em Portugal — do primeiro contato com o cliente até a submissão da obrigação fiscal (IVA, IES, Modelo 22, Segurança Social), sem depender de planilhas soltas. Cada obrigação segue um circuito de aprovação com estados explícitos, e rotinas de automação (RPA) cuidam do trabalho repetitivo de coleta e preenchimento de dados.",
+      tags: [
+        "ERP + CRM sob medida",
+        "Automação de processos (RPA)",
+        "Next.js · NestJS · PostgreSQL",
+      ],
+      highlights: [
+        { value: "43", label: "módulos de serviço na API" },
+        { value: "199", label: "telas da aplicação" },
+        { value: "122", label: "migrações de banco de dados versionadas" },
+        { value: "14", label: "áreas funcionais integradas" },
+      ],
+      quote:
+        "Deixamos de perguntar onde está o arquivo. Agora a pergunta é só se está feito — e o sistema já sabe a resposta.",
+    },
+    automationsTitle: "Tipos de automação que construímos",
+    automationsLead:
+      "Além de sistemas completos como o NEXUS, a VEKTO constrói automações com RPA (UiPath, Power Automate) e Power Apps para eliminar trabalho manual em processos específicos.",
+    automations: [
+      {
+        title: "Backoffice autônomo de documentos",
+        description:
+          "Recebe e-mails e PDFs, extrai e valida dados, classifica e lança no sistema — só pede aprovação humana quando há erro.",
+      },
+      {
+        title: "Contas a pagar",
+        description:
+          "Do recebimento da fatura à conciliação: validação, aprovação e lançamento automático no ERP.",
+      },
+      {
+        title: "Onboarding de clientes",
+        description:
+          "Formulário, documentos, verificação, criação em CRM/ERP e liberação de acessos, sem etapas manuais repetidas.",
+      },
+      {
+        title: "Reconciliação automática",
+        description:
+          "Cruza banco, ERP e faturas para identificar divergências, deixando só as exceções para revisão humana.",
+      },
+      {
+        title: "Agente operacional de e-mail",
+        description:
+          "Lê caixas de e-mail compartilhadas, identifica o pedido, consulta os sistemas e executa a ação — não só responde.",
       },
     ],
   },
@@ -138,28 +258,71 @@ const pt: Dictionary = {
     title: "Como trabalhamos",
     steps: [
       {
-        title: "Entender",
-        description: "Compreendemos o problema e o contexto.",
+        title: "Diagnóstico",
+        description: "Entendemos o processo e identificamos onde está o desperdício.",
       },
       {
-        title: "Transformar",
-        description: "Desenhamos a solução mais eficiente.",
+        title: "Primeira versão",
+        description: "Construímos rapidamente uma solução funcional.",
       },
       {
-        title: "Construir",
-        description: "Desenvolvemos com foco em qualidade e simplicidade.",
+        title: "Uso real",
+        description: "Colocamos nas mãos da equipe para validar no dia a dia.",
       },
       {
-        title: "Automatizar",
-        description: "Automatizamos processos e eliminamos tarefas manuais.",
+        title: "Evolução",
+        description: "Melhoramos a partir do uso real e dos dados.",
+      },
+    ],
+  },
+  tech: {
+    eyebrow: "Tecnologia",
+    title: "Tecnologia adequada ao problema",
+    lead: "Escolhemos a ferramenta certa para cada situação — não a mais na moda.",
+    categories: [
+      {
+        title: "Desenvolvimento",
+        items: ["Next.js", "React", "NestJS", "TypeScript", "PostgreSQL", "Supabase"],
       },
       {
-        title: "Implantar",
-        description: "Colocamos a solução em produção com segurança.",
+        title: "Automação e RPA",
+        items: ["UiPath", "Power Automate", "Power Apps", "SharePoint"],
       },
       {
-        title: "Evoluir",
-        description: "Acompanhamos, medimos e evoluímos continuamente.",
+        title: "Inteligência Artificial",
+        items: ["OpenAI", "Claude"],
+      },
+    ],
+  },
+  security: {
+    eyebrow: "Segurança",
+    title: "Construído para ambientes empresariais",
+    lead: "Não prometemos o que não conseguimos cumprir — são práticas que aplicamos desde o desenho da solução.",
+    items: [
+      {
+        title: "Acessos",
+        description:
+          "Permissões configuráveis por módulo e por papel de usuário (ex.: administrador, supervisor, operador).",
+      },
+      {
+        title: "Dados",
+        description:
+          "Bases de dados estruturadas com controle de versão e histórico de alterações.",
+      },
+      {
+        title: "Auditoria",
+        description:
+          "Registro de quem fez o quê e quando, quando o processo exige rastreabilidade.",
+      },
+      {
+        title: "Integração",
+        description:
+          "Comunicação entre sistemas via APIs com autenticação e controle de acesso.",
+      },
+      {
+        title: "Privacidade",
+        description:
+          "Tratamento de dados considerado desde o desenho da solução, adequado à sensibilidade de cada informação.",
       },
     ],
   },
@@ -187,6 +350,12 @@ const pt: Dictionary = {
   },
   footer: {
     tagline: ["Direção", "Velocidade", "Resultado"],
+    companyLabel: "Empresa",
+    navSolutions: "Soluções",
+    navCases: "Cases",
+    navHow: "Como trabalhamos",
+    navContact: "Contato",
+    copyright: "© 2026 VEKTO. Todos os direitos reservados.",
   },
 };
 
@@ -198,6 +367,7 @@ const en: Dictionary = {
   },
   nav: {
     solutions: "Solutions",
+    cases: "Cases",
     howWeWork: "How We Work",
     about: "About",
     contact: "Contact",
@@ -213,6 +383,28 @@ const en: Dictionary = {
     ctaSecondary: "See Solutions",
     diagramLeft: ["Manual and", "inefficient processes"],
     diagramRight: ["Automated and integrated", "digital solutions"],
+  },
+  whoFor: {
+    eyebrow: "Who we work with",
+    title: "For companies that know the process could be better.",
+    items: [
+      {
+        title: "Still runs on spreadsheets",
+        description:
+          "Information scattered across files, manual control, and little visibility into what's pending and with whom.",
+      },
+      {
+        title: "The team loses time on repetitive tasks",
+        description:
+          "Copying information, validating data, generating documents or feeding systems by hand, every day.",
+      },
+      {
+        title: "Systems don't talk to each other",
+        description:
+          "The same information has to be typed more than once, in more than one place, by more than one person.",
+      },
+    ],
+    closing: "That's exactly where VEKTO comes in.",
   },
   solutions: {
     items: [
@@ -234,6 +426,61 @@ const en: Dictionary = {
         title: "Systems integration",
         description:
           "We connect systems, data and tools to create a single flow.",
+      },
+    ],
+  },
+  cases: {
+    eyebrow: "Solutions we've already built",
+    title: "From idea to system in production",
+    lead: "We don't just talk about technical capacity — we show the kind of system and automation VEKTO builds.",
+    flagship: {
+      tag: "Real case · Internal platform",
+      title: "NEXUS — Management & Accounting",
+      lead: "An entire accounting firm's operation, in a single system.",
+      description:
+        "NEXUS is the management and accounting platform VEKTO built to centralize an entire accounting firm's operation in Portugal — from the first client contact to filing the tax obligation (VAT, IES, Modelo 22, Social Security) — with no loose spreadsheets involved. Every obligation follows an approval workflow with explicit states, and RPA automation handles the repetitive work of collecting and filling in data.",
+      tags: [
+        "Custom ERP + CRM",
+        "Process automation (RPA)",
+        "Next.js · NestJS · PostgreSQL",
+      ],
+      highlights: [
+        { value: "43", label: "API service modules" },
+        { value: "199", label: "application screens" },
+        { value: "122", label: "versioned database migrations" },
+        { value: "14", label: "integrated functional areas" },
+      ],
+      quote:
+        "We stopped asking where the file is. Now the only question is whether it's done — and the system already knows the answer.",
+    },
+    automationsTitle: "Types of automation we build",
+    automationsLead:
+      "Beyond full systems like NEXUS, VEKTO builds RPA automations (UiPath, Power Automate) and Power Apps to remove manual work from specific processes.",
+    automations: [
+      {
+        title: "Autonomous document backoffice",
+        description:
+          "Receives emails and PDFs, extracts and validates data, classifies and posts it into the system — asking for human approval only when there's an error.",
+      },
+      {
+        title: "Accounts payable",
+        description:
+          "From receiving the invoice to reconciliation: validation, approval and automatic posting into the ERP.",
+      },
+      {
+        title: "Client onboarding",
+        description:
+          "Form, documents, verification, CRM/ERP creation and access provisioning, with no repeated manual steps.",
+      },
+      {
+        title: "Automatic reconciliation",
+        description:
+          "Cross-checks bank, ERP and invoices to flag discrepancies, leaving only the exceptions for human review.",
+      },
+      {
+        title: "Operational email agent",
+        description:
+          "Reads shared inboxes, identifies the request, checks the systems and carries out the action — not just replies.",
       },
     ],
   },
@@ -262,28 +509,71 @@ const en: Dictionary = {
     title: "How we work",
     steps: [
       {
-        title: "Understand",
-        description: "We understand the problem and its context.",
+        title: "Diagnosis",
+        description: "We understand the process and find where the waste is.",
       },
       {
-        title: "Transform",
-        description: "We design the most efficient solution.",
+        title: "First version",
+        description: "We quickly build a working solution.",
       },
       {
-        title: "Build",
-        description: "We develop with a focus on quality and simplicity.",
+        title: "Real use",
+        description: "We put it in the team's hands to validate day-to-day.",
       },
       {
-        title: "Automate",
-        description: "We automate processes and remove manual tasks.",
+        title: "Evolution",
+        description: "We improve it based on real use and data.",
+      },
+    ],
+  },
+  tech: {
+    eyebrow: "Technology",
+    title: "Technology that fits the problem",
+    lead: "We pick the right tool for each situation — not the trendiest one.",
+    categories: [
+      {
+        title: "Development",
+        items: ["Next.js", "React", "NestJS", "TypeScript", "PostgreSQL", "Supabase"],
       },
       {
-        title: "Deploy",
-        description: "We put the solution into production safely.",
+        title: "Automation and RPA",
+        items: ["UiPath", "Power Automate", "Power Apps", "SharePoint"],
       },
       {
-        title: "Evolve",
-        description: "We track, measure and keep improving continuously.",
+        title: "Artificial Intelligence",
+        items: ["OpenAI", "Claude"],
+      },
+    ],
+  },
+  security: {
+    eyebrow: "Security",
+    title: "Built for business environments",
+    lead: "We don't promise what we can't deliver — these are practices we apply from the design stage on.",
+    items: [
+      {
+        title: "Access",
+        description:
+          "Configurable permissions by module and by user role (e.g. admin, supervisor, operator).",
+      },
+      {
+        title: "Data",
+        description:
+          "Structured databases with version control and a history of changes.",
+      },
+      {
+        title: "Auditability",
+        description:
+          "A record of who did what and when, whenever the process requires traceability.",
+      },
+      {
+        title: "Integration",
+        description:
+          "System-to-system communication via authenticated APIs with access control.",
+      },
+      {
+        title: "Privacy",
+        description:
+          "Data handling considered from the design stage, matched to the sensitivity of each piece of information.",
       },
     ],
   },
@@ -310,6 +600,12 @@ const en: Dictionary = {
   },
   footer: {
     tagline: ["Direction", "Speed", "Results"],
+    companyLabel: "Company",
+    navSolutions: "Solutions",
+    navCases: "Cases",
+    navHow: "How we work",
+    navContact: "Contact",
+    copyright: "© 2026 VEKTO. All rights reserved.",
   },
 };
 
